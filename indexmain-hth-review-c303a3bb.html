@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 站点帮助卡片</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f8fafc;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 720px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s;
+        }
+        @media (max-width: 500px) {
+            body { padding: 1rem 0.75rem; }
+            .container { padding: 1.8rem 1.2rem; border-radius: 20px; }
+        }
+
+        /* 标题层级 */
+        h1 {
+            font-weight: 600;
+            font-size: 2rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+            line-height: 1.3;
+            color: #0f172a;
+        }
+        .subhead {
+            color: #475569;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            border-left: 3px solid #94a3b8;
+            padding-left: 1rem;
+        }
+        h2 {
+            font-weight: 500;
+            font-size: 1.2rem;
+            margin: 2rem 0 0.75rem;
+            letter-spacing: -0.01em;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        h2:first-of-type {
+            margin-top: 0;
+        }
+        p, li {
+            font-size: 0.98rem;
+            color: #334155;
+        }
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            margin: 1.25rem 0 0.5rem;
+        }
+        .card {
+            background: #f1f5f9;
+            border-radius: 18px;
+            padding: 1rem 1.25rem;
+            transition: background 0.2s;
+        }
+        .card strong {
+            display: block;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            color: #0f172a;
+        }
+        .card p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+        .inline-link {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid #bfdbfe;
+            transition: border-color 0.15s, color 0.15s;
+        }
+        .inline-link:hover {
+            color: #1d4ed8;
+            border-bottom-color: #1d4ed8;
+        }
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: 0.5rem 0 0.25rem;
+        }
+        .tag {
+            background: #e2e8f0;
+            padding: 0.25rem 0.75rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #334155;
+            font-weight: 450;
+        }
+        .faq-item {
+            margin: 1rem 0 0.2rem;
+        }
+        .faq-item summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #1e293b;
+            padding: 0.25rem 0;
+            font-size: 0.98rem;
+            border-bottom: 1px solid transparent;
+            transition: color 0.1s;
+        }
+        .faq-item summary:hover {
+            color: #2563eb;
+        }
+        .faq-item p {
+            margin-top: 0.4rem;
+            padding-left: 0.25rem;
+            color: #475569;
+        }
+        .hr-light {
+            margin: 2rem 0 1rem;
+            border: 0;
+            height: 1px;
+            background: #e9edf2;
+        }
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: #64748b;
+            border-top: 1px solid #e9edf2;
+            padding-top: 1.25rem;
+            text-align: left;
+        }
+        .hero-icon {
+            display: inline-block;
+            background: #eef2ff;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+            font-size: 1.3rem;
+            margin-right: 0.3rem;
+        }
+        .flex-hero {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .hero-icon span {
+            display: block;
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 主视觉 / 标题区 -->
+    <div class="flex-hero">
+        <div class="hero-icon"><span>📇</span></div>
+        <h1>华体会</h1>
+    </div>
+    <div class="subhead">快速识别网站用途 · 信息卡片式说明</div>
+
+    <!-- 卡片区：用途卡片 + 适合人群 混合呈现 -->
+    <h2>📌 站点用途 · 一眼看清</h2>
+    <div class="card-grid">
+        <div class="card">
+            <strong>📋 信息聚合与引导</strong>
+            <p>汇集功能入口、服务说明与常见问题，帮助新访客在几分钟内理解平台定位，避免在多层菜单中迷失。</p>
+        </div>
+        <div class="card">
+            <strong>🧭 操作指引</strong>
+            <p>按场景分类展示使用路径，例如快速注册、功能查找、账号关联等，降低初次使用的熟悉成本。</p>
+        </div>
+        <div class="card">
+            <strong>📎 资源与更新</strong>
+            <p>提供版本动态、公告摘要以及常用链接整理，适合需要持续了解平台变化的用户。</p>
+        </div>
+    </div>
+
+    <!-- 适合人群 + 特点自然结合 -->
+    <h2>👥 适合人群</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.25rem;">
+        <span class="tag">新注册用户</span>
+        <span class="tag">需要快速上手的访客</span>
+        <span class="tag">平台功能回顾者</span>
+        <span class="tag">信息查找者</span>
+    </div>
+    <p style="margin-top: 0.9rem;">无论你是第一次接触，还是想确认某个功能的位置，都能从卡片分区中得到简洁的答案。页面采用窄正文宽度，减少阅读干扰。</p>
+
+    <!-- 自然链接段落 -->
+    <h2>🔗 从这里了解 <a href="https://indexmain-hth.com.cn" class="inline-link">华体会</a></h2>
+    <p>如果你希望直接浏览平台的核心内容，可以前往 <a href="https://indexmain-hth.com.cn" class="inline-link">华体会</a> 查看完整的导航与更新。该页面作为起始介绍，帮助你判断接下来的操作方向。</p>
+    <p style="margin-top: 0.6rem;">示例：当你想了解某项功能是否适用于当前账号时，卡片区会标注适用场景；如果需要进一步操作，<a href="https://indexmain-hth.com.cn" class="inline-link">华体会</a> 的链接会带你到对应的详细页面。</p>
+
+    <!-- 提示 / 场景 -->
+    <h2>💡 常见使用场景</h2>
+    <ul style="list-style: none; padding-left: 0; margin: 0.5rem 0 0.2rem;">
+        <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span style="color: #2563eb;">→</span> 初次访问：阅读卡片「信息聚合与引导」了解整体布局。</li>
+        <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span style="color: #2563eb;">→</span> 寻找具体操作：查看「操作指引」卡片，再通过链接跳转。</li>
+        <li style="margin-bottom: 0.6rem; display: flex; gap: 0.5rem;"><span style="color: #2563eb;">→</span> 确认更新：留意资源卡片中的公告摘要，保持信息同步。</li>
+    </ul>
+
+    <!-- FAQ 摘要 (简短) -->
+    <h2>❓ 常见疑问摘要</h2>
+    <details class="faq-item">
+        <summary>这个页面和主站是什么关系？</summary>
+        <p>本页是介绍性索引页，用于快速说明 <a href="https://indexmain-hth.com.cn" class="inline-link">华体会</a> 的用途与结构，主站包含完整功能与详细内容。</p>
+    </details>
+    <details class="faq-item">
+        <summary>卡片里的内容会定期更新吗？</summary>
+        <p>会随着平台调整而同步修订，确保指引与实际页面一致。建议以主站最新信息为准。</p>
+    </details>
+    <details class="faq-item">
+        <summary>移动端浏览体验如何？</summary>
+        <p>本页采用响应式布局，窄屏下卡片与间距自动适配，阅读依然舒适。</p>
+    </details>
+
+    <hr class="hr-light">
+
+    <div class="footer-note">
+        <p style="margin:0;">本页为说明性卡片索引，内容真实克制，旨在帮助用户快速识别 <a href="https://indexmain-hth.com.cn" class="inline-link">华体会</a> 的用途与组织方式。如有具体操作问题，建议直接浏览主站对应模块。</p>
+        <p style="margin-top: 0.5rem; opacity: 0.7;">— 信息卡片式介绍 · 极简留白版 —</p>
+    </div>
+
+</div>
+</body>
+</html>
