@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开元棋牌 · 棋盘入口说明页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: #f2f4f6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        /* 主视觉卡片 */
+        .hero-card {
+            background: linear-gradient(145deg, #ffffff, #f9fafb);
+            border-radius: 28px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 3rem 2.5rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .hero-card h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #475569;
+            max-width: 680px;
+            margin: 0 auto 1rem auto;
+        }
+
+        .hero-card .stable-badge {
+            display: inline-block;
+            background: #e6edf7;
+            color: #1e3a5f;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            margin-top: 0.25rem;
+            border: 1px solid #cddcec;
+        }
+
+        /* 用途卡片区域 */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e6eaef;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.02);
+            padding: 1.8rem 1.5rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 0.8rem;
+            border-bottom: 2px solid #eef2f6;
+            padding-bottom: 0.5rem;
+        }
+
+        .card p, .card li {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #475569;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .card ul li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #6f8db0;
+            font-weight: 600;
+        }
+
+        /* 适合人群 + 自然链接段落区 */
+        .info-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-card {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e6eaef;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            padding: 1.8rem 1.8rem;
+            flex: 1 1 280px;
+        }
+
+        .info-card h4 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 0.7rem;
+        }
+
+        .info-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #475569;
+        }
+
+        .natural-link-card {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e6eaef;
+            padding: 1.8rem 1.8rem;
+            flex: 2 1 380px;
+        }
+
+        .natural-link-card p {
+            font-size: 0.98rem;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 0.6rem;
+        }
+
+        .natural-link-card a {
+            color: #1a4972;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #b6ccdf;
+            transition: border-color 0.15s;
+        }
+
+        .natural-link-card a:hover {
+            border-bottom-color: #1a4972;
+        }
+
+        /* 提示摘要 */
+        .faq-summary {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e6eaef;
+            padding: 1.8rem 2rem;
+            margin-top: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .faq-summary h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0.9rem;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #1e293b;
+            font-size: 0.95rem;
+        }
+
+        .faq-item .a {
+            color: #54708f;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-top: 0.15rem;
+            padding-left: 0.5rem;
+            border-left: 2px solid #dbe4ed;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #8b9aac;
+            border-top: 1px solid #dce2ea;
+            padding-top: 1.5rem;
+            margin-top: 0.8rem;
+        }
+
+        @media (max-width: 600px) {
+            .hero-card {
+                padding: 2rem 1.2rem;
+            }
+            .hero-card h1 {
+                font-size: 2rem;
+            }
+            .card, .info-card, .natural-link-card {
+                padding: 1.2rem;
+            }
+            .faq-summary {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 主视觉 -->
+    <div class="hero-card">
+        <h1>开元棋牌 · 稳定入口</h1>
+        <p>一份整理过的说明页，帮助新朋友快速理解平台用途与使用场景。简洁、清晰，不绕路。</p>
+        <span class="stable-badge">长期维护 · 访问路径说明</span>
+    </div>
+
+    <!-- 用途卡片 -->
+    <div class="cards-grid">
+        <div class="card">
+            <h3>对弈练习</h3>
+            <p>适合日常棋类对局练习，提供不同棋种的基础对弈环境。无需额外注册，打开页面即可开始思考。</p>
+        </div>
+        <div class="card">
+            <h3>界面轻量</h3>
+            <p>页面结构以简约为出发点，减少干扰元素，让视线聚焦于棋盘与落子逻辑。适合沉浸式复盘。</p>
+        </div>
+        <div class="card">
+            <h3>多端适配</h3>
+            <p>从电脑屏幕到手机浏览器，布局均保持可读性。卡片式设计在竖屏下依然整齐。</p>
+        </div>
+    </div>
+
+    <!-- 适合人群 + 自然链接段落 (并排) -->
+    <div class="info-block">
+        <div class="info-card">
+            <h4>适合这样的你</h4>
+            <p>
+                业余棋手、策略爱好者、习惯在网页端快速开局的朋友。也适合想通过简短界面了解棋类规则变化的新手。
+                不需要下载额外应用，打开浏览器就是一种入口方式。
+            </p>
+        </div>
+        <div class="natural-link-card">
+            <p>
+                “开元棋牌”这个名字在棋类爱好者圈子里慢慢传开，因为它一直保持同样的访问路径，没有频繁更换地址。
+                如果你正在找一处长期稳定的棋类对弈页面，可以直接记下这个链接：<a href="https://kaiyuanchess.com">开元棋牌</a>。
+                页面里没有弹窗干扰，也没有复杂的引导流程，打开就是棋盘。
+            </p>
+            <p>
+                很多用户从朋友那里听说这个页面，或者通过收藏夹直接进入。因为结构固定，所以很适合作为日常对弈的起点。
+            </p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+        <h4>常见疑问摘要</h4>
+        <div class="faq-item">
+            <span class="q">需要注册账号吗？</span>
+            <span class="a">不需要账号体系，直接进入页面即可使用，本质是一个静态对弈界面，不收集个人信息。</span>
+        </div>
+        <div class="faq-item">
+            <span class="q">页面会突然失效吗？</span>
+            <span class="a">该入口由维护者长期持有，域名结构简单，目前没有变更计划。如果出现访问异常，通常由本地网络引起。</span>
+        </div>
+        <div class="faq-item">
+            <span class="q">移动浏览器上能正常下棋吗？</span>
+            <span class="a">可以，按钮和棋盘针对触摸操作做了基础优化，在主流手机浏览器上均可流畅使用。</span>
+        </div>
+    </div>
+
+    <!-- 页脚说明 -->
+    <div class="footer-note">
+        本页为静态说明 · 仅提供路径参考 · 内容最后更新于近期
+    </div>
+</div>
+</body>
+</html>
